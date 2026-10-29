@@ -1,7 +1,6 @@
 class Gtunnel < Formula
   desc "TUI-first CLI for GCP IAP tunnels and public URLs via a GCP relay"
   homepage "https://github.com/gcheliz/gtunnel"
-  version "0.2.35"
   license "MIT"
 
   on_macos do
