@@ -1,0 +1,38 @@
+name: Audit
+
+# The formula is bumped by the release workflow of gcheliz/gtunnel, which pushes
+# straight to main, so this runs on that push as well as on a pull request: a bad
+# hash or url is caught within minutes, and the job installs the formula for real
+# to prove the tarball, its checksum and the completions.
+on:
+  # No path filter here: a required check that never reports blocks a pull request
+  # that touches only the README
+  pull_request:
+  push:
+    branches: [main]
+    paths: ["Formula/**", ".github/workflows/audit.yml"]
+  workflow_dispatch:
+
+# Nothing inherits write access
+permissions:
+  contents: read
+
+jobs:
+  audit:
+    runs-on: macos-latest
+    steps:
+      # Pinned to a commit, as in gcheliz/gtunnel
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - name: Tap this checkout
+        run: brew tap gcheliz/tap "${GITHUB_WORKSPACE}"
+      - name: Style
+        run: brew style gcheliz/tap
+      - name: Audit
+        run: brew audit --strict gcheliz/tap/gtunnel
+      - name: Install and test
+        run: |
+          brew install gcheliz/tap/gtunnel
+          brew test gcheliz/tap/gtunnel
+          test -f "$(brew --prefix)/share/zsh/site-functions/_gtunnel"
