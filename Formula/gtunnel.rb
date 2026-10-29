@@ -27,6 +27,7 @@ class Gtunnel < Formula
 
   def install
     bin.install "gtunnel"
+    generate_completions_from_executable(bin/"gtunnel", "completions")
   end
 
   def caveats
