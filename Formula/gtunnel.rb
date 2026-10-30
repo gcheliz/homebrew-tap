@@ -30,14 +30,6 @@ class Gtunnel < Formula
     generate_completions_from_executable(bin/"gtunnel", "completions")
   end
 
-  def caveats
-    <<~EOS
-      gtunnel drives gcloud and needs a logged-in Google Cloud CLI:
-        gcloud auth login
-      Prerequisites and IAM: https://github.com/gcheliz/gtunnel/blob/main/docs/usage.md#getting-set-up
-    EOS
-  end
-
   test do
     assert_match version.to_s, shell_output("#{bin}/gtunnel --version")
   end
