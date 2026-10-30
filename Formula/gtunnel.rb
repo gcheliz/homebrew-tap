@@ -5,23 +5,23 @@ class Gtunnel < Formula
 
   on_macos do
     on_arm do
-      url "https://github.com/gcheliz/gtunnel/releases/download/v0.2.48/gtunnel-macos-arm64-v0.2.48.tar.gz"
-      sha256 "879dab43b262eb3062b3bc957cd5c3b048513bf0ee3f8b383955b90f35cc7105"
+      url "https://github.com/gcheliz/gtunnel/releases/download/v0.2.49/gtunnel-macos-arm64-v0.2.49.tar.gz"
+      sha256 "a94d2a2eed6865aeaa70e8582ce835a39d86d3cb4f19ff1d1c7ff6e9715385ae"
     end
     on_intel do
-      url "https://github.com/gcheliz/gtunnel/releases/download/v0.2.48/gtunnel-macos-intel-v0.2.48.tar.gz"
-      sha256 "494d0964f493e788b3ac4139aaf7bb8b8ea2ff43cbd4e88361909d3ac151b63d"
+      url "https://github.com/gcheliz/gtunnel/releases/download/v0.2.49/gtunnel-macos-intel-v0.2.49.tar.gz"
+      sha256 "4388b49d0e326eaa3e223cf7e96611d989971aa5442b281a71b507ab3fdf8ccd"
     end
   end
 
   on_linux do
     on_arm do
-      url "https://github.com/gcheliz/gtunnel/releases/download/v0.2.48/gtunnel-linux-arm64-v0.2.48.tar.gz"
-      sha256 "7acaf2eef77702e451cef2b1f4a6baed2f13bad53aeefc80280f4a40202b7297"
+      url "https://github.com/gcheliz/gtunnel/releases/download/v0.2.49/gtunnel-linux-arm64-v0.2.49.tar.gz"
+      sha256 "40a9b4f2db60d47480db2df699e085f3460d850ec64d997496034d52038d8987"
     end
     on_intel do
-      url "https://github.com/gcheliz/gtunnel/releases/download/v0.2.48/gtunnel-linux-amd64-v0.2.48.tar.gz"
-      sha256 "02d2119930a7efced8c733c8395764bfac8c1293c64d27fb95143f5d913d54aa"
+      url "https://github.com/gcheliz/gtunnel/releases/download/v0.2.49/gtunnel-linux-amd64-v0.2.49.tar.gz"
+      sha256 "7b88d002d9c2fac54ea4c782525c185215c438866d72610c5d1ca5887c7fc9df"
     end
   end
 
